@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -shared -Wl,-soname,libSimpleCPXParser.so -o libSimpleCPXParser.so CMakeFiles/SimpleCPXParser.dir/src/SimpleCPXParser.c.o 
