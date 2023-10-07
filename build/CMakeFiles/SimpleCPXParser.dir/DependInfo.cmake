@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/lazarus/Documents/SimpleCPX/SimpleCPXParser.c" "CMakeFiles/SimpleCPXParser.dir/SimpleCPXParser.c.o" "gcc" "CMakeFiles/SimpleCPXParser.dir/SimpleCPXParser.c.o.d"
+  "/home/lazarus/Documents/SimpleCPX/src/SimpleCPXParser.c" "CMakeFiles/SimpleCPXParser.dir/src/SimpleCPXParser.c.o" "gcc" "CMakeFiles/SimpleCPXParser.dir/src/SimpleCPXParser.c.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

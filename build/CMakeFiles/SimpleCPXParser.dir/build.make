@@ -69,28 +69,28 @@ include CMakeFiles/SimpleCPXParser.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/SimpleCPXParser.dir/flags.make
 
-CMakeFiles/SimpleCPXParser.dir/SimpleCPXParser.c.o: CMakeFiles/SimpleCPXParser.dir/flags.make
-CMakeFiles/SimpleCPXParser.dir/SimpleCPXParser.c.o: /home/lazarus/Documents/SimpleCPX/SimpleCPXParser.c
-CMakeFiles/SimpleCPXParser.dir/SimpleCPXParser.c.o: CMakeFiles/SimpleCPXParser.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lazarus/Documents/SimpleCPX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/SimpleCPXParser.dir/SimpleCPXParser.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SimpleCPXParser.dir/SimpleCPXParser.c.o -MF CMakeFiles/SimpleCPXParser.dir/SimpleCPXParser.c.o.d -o CMakeFiles/SimpleCPXParser.dir/SimpleCPXParser.c.o -c /home/lazarus/Documents/SimpleCPX/SimpleCPXParser.c
+CMakeFiles/SimpleCPXParser.dir/src/SimpleCPXParser.c.o: CMakeFiles/SimpleCPXParser.dir/flags.make
+CMakeFiles/SimpleCPXParser.dir/src/SimpleCPXParser.c.o: /home/lazarus/Documents/SimpleCPX/src/SimpleCPXParser.c
+CMakeFiles/SimpleCPXParser.dir/src/SimpleCPXParser.c.o: CMakeFiles/SimpleCPXParser.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lazarus/Documents/SimpleCPX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/SimpleCPXParser.dir/src/SimpleCPXParser.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SimpleCPXParser.dir/src/SimpleCPXParser.c.o -MF CMakeFiles/SimpleCPXParser.dir/src/SimpleCPXParser.c.o.d -o CMakeFiles/SimpleCPXParser.dir/src/SimpleCPXParser.c.o -c /home/lazarus/Documents/SimpleCPX/src/SimpleCPXParser.c
 
-CMakeFiles/SimpleCPXParser.dir/SimpleCPXParser.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SimpleCPXParser.dir/SimpleCPXParser.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/lazarus/Documents/SimpleCPX/SimpleCPXParser.c > CMakeFiles/SimpleCPXParser.dir/SimpleCPXParser.c.i
+CMakeFiles/SimpleCPXParser.dir/src/SimpleCPXParser.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SimpleCPXParser.dir/src/SimpleCPXParser.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/lazarus/Documents/SimpleCPX/src/SimpleCPXParser.c > CMakeFiles/SimpleCPXParser.dir/src/SimpleCPXParser.c.i
 
-CMakeFiles/SimpleCPXParser.dir/SimpleCPXParser.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SimpleCPXParser.dir/SimpleCPXParser.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/lazarus/Documents/SimpleCPX/SimpleCPXParser.c -o CMakeFiles/SimpleCPXParser.dir/SimpleCPXParser.c.s
+CMakeFiles/SimpleCPXParser.dir/src/SimpleCPXParser.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SimpleCPXParser.dir/src/SimpleCPXParser.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/lazarus/Documents/SimpleCPX/src/SimpleCPXParser.c -o CMakeFiles/SimpleCPXParser.dir/src/SimpleCPXParser.c.s
 
 # Object files for target SimpleCPXParser
 SimpleCPXParser_OBJECTS = \
-"CMakeFiles/SimpleCPXParser.dir/SimpleCPXParser.c.o"
+"CMakeFiles/SimpleCPXParser.dir/src/SimpleCPXParser.c.o"
 
 # External object files for target SimpleCPXParser
 SimpleCPXParser_EXTERNAL_OBJECTS =
 
-libSimpleCPXParser.so: CMakeFiles/SimpleCPXParser.dir/SimpleCPXParser.c.o
+libSimpleCPXParser.so: CMakeFiles/SimpleCPXParser.dir/src/SimpleCPXParser.c.o
 libSimpleCPXParser.so: CMakeFiles/SimpleCPXParser.dir/build.make
 libSimpleCPXParser.so: CMakeFiles/SimpleCPXParser.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/lazarus/Documents/SimpleCPX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C shared library libSimpleCPXParser.so"

@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = -DSimpleCPXParser_EXPORTS
 
-C_INCLUDES = -I/home/lazarus/Documents/SimpleCPX
+C_INCLUDES = -I/home/lazarus/Documents/SimpleCPX/src
 
 C_FLAGS = -fPIC
 

@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/SimpleCPXParser.dir/SimpleCPXParser.c.o"
-  "CMakeFiles/SimpleCPXParser.dir/SimpleCPXParser.c.o.d"
+  "CMakeFiles/SimpleCPXParser.dir/src/SimpleCPXParser.c.o"
+  "CMakeFiles/SimpleCPXParser.dir/src/SimpleCPXParser.c.o.d"
   "libSimpleCPXParser.pdb"
   "libSimpleCPXParser.so"
 )

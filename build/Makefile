@@ -174,29 +174,29 @@ SimpleCPXParser/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleCPXParser.dir/build.make CMakeFiles/SimpleCPXParser.dir/build
 .PHONY : SimpleCPXParser/fast
 
-SimpleCPXParser.o: SimpleCPXParser.c.o
-.PHONY : SimpleCPXParser.o
+src/SimpleCPXParser.o: src/SimpleCPXParser.c.o
+.PHONY : src/SimpleCPXParser.o
 
 # target to build an object file
-SimpleCPXParser.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleCPXParser.dir/build.make CMakeFiles/SimpleCPXParser.dir/SimpleCPXParser.c.o
-.PHONY : SimpleCPXParser.c.o
+src/SimpleCPXParser.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleCPXParser.dir/build.make CMakeFiles/SimpleCPXParser.dir/src/SimpleCPXParser.c.o
+.PHONY : src/SimpleCPXParser.c.o
 
-SimpleCPXParser.i: SimpleCPXParser.c.i
-.PHONY : SimpleCPXParser.i
+src/SimpleCPXParser.i: src/SimpleCPXParser.c.i
+.PHONY : src/SimpleCPXParser.i
 
 # target to preprocess a source file
-SimpleCPXParser.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleCPXParser.dir/build.make CMakeFiles/SimpleCPXParser.dir/SimpleCPXParser.c.i
-.PHONY : SimpleCPXParser.c.i
+src/SimpleCPXParser.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleCPXParser.dir/build.make CMakeFiles/SimpleCPXParser.dir/src/SimpleCPXParser.c.i
+.PHONY : src/SimpleCPXParser.c.i
 
-SimpleCPXParser.s: SimpleCPXParser.c.s
-.PHONY : SimpleCPXParser.s
+src/SimpleCPXParser.s: src/SimpleCPXParser.c.s
+.PHONY : src/SimpleCPXParser.s
 
 # target to generate assembly for a file
-SimpleCPXParser.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleCPXParser.dir/build.make CMakeFiles/SimpleCPXParser.dir/SimpleCPXParser.c.s
-.PHONY : SimpleCPXParser.c.s
+src/SimpleCPXParser.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleCPXParser.dir/build.make CMakeFiles/SimpleCPXParser.dir/src/SimpleCPXParser.c.s
+.PHONY : src/SimpleCPXParser.c.s
 
 # Help Target
 help:
@@ -211,9 +211,9 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... SimpleCPXParser"
-	@echo "... SimpleCPXParser.o"
-	@echo "... SimpleCPXParser.i"
-	@echo "... SimpleCPXParser.s"
+	@echo "... src/SimpleCPXParser.o"
+	@echo "... src/SimpleCPXParser.i"
+	@echo "... src/SimpleCPXParser.s"
 .PHONY : help
 
 

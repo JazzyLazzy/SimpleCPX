@@ -1,0 +1,2 @@
+/usr/local/lib/libSimpleCPXParser.so
+/usr/local/include/GPX.h
