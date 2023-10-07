@@ -67,6 +67,7 @@ void parse_GPX(char *file){
   }
 
   printf("%s, %s", gpx->creator, gpx->version);
+  free(gpx->creator);
   free(gpx);
   XML_ParserFree(parser);
 
