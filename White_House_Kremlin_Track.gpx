@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" creator="SimpleGPX_TEST" version="1.1" xsi:schemaLocation="http://www.topografix.com/GPX/1/0 http://www.topografix.com/GPX/1/0/gpx.xsd">
+  <wpt lat="38.89723" lon="-77.03623">
+    <name>White House</name>
+  </wpt>
+  <wpt lat="51.49945266389364" lon="-7.124809201550484">
+    <name>Kremlin</name>
+  </wpt>
+  <trk>
+    <name>White House Kremlin Track</name>
+    <trkseg>
+      <trkpt lat="51.49945266389364" lon="-7.124809201550484">
+        <ele>0.0</ele>
+        <time>2023-08-20T01:16:13.337687</time>
+      </trkpt>
+      <trkpt lat="38.89723" lon="-77.03623">
+        <ele>0.0</ele>
+        <time>2023-08-20T01:16:13.335079</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>
