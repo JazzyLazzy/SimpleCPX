@@ -5,10 +5,12 @@
 #define Waypoint_H
 
 typedef struct {
-  Location location;
+  Location *location;
   char *name;
   char *desc;
   char *sym;
+  //int d;
+  struct Waypoint *next;
 } Waypoint;
 
 #endif // !Waypoint_H
