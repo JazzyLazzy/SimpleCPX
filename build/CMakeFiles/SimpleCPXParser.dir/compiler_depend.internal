@@ -68,5 +68,6 @@ CMakeFiles/SimpleCPXParser.dir/src/SimpleCPXParser.c.o
  /usr/include/sys/select.h
  /usr/include/sys/types.h
  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stdarg.h
+ /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stdbool.h
  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stddef.h
 

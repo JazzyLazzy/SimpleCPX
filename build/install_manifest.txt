@@ -1,2 +1,7 @@
-/usr/local/lib/libSimpleCPXParser.so
-/usr/local/include/GPX.h
+/usr/lib/libSimpleCPXParser.so
+/usr/include/GPX.h
+/usr/include/Location.h
+/usr/include/Waypoint.h
+/usr/include/Track.h
+/usr/include/Track_Seg.h
+/usr/include/SimpleCPXParser.h

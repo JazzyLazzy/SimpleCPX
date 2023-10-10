@@ -67,6 +67,7 @@ CMakeFiles/SimpleCPXParser.dir/src/SimpleCPXParser.c.o: /home/lazarus/Documents/
   /usr/include/sys/select.h \
   /usr/include/sys/types.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stdarg.h \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stdbool.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stddef.h
 
 
@@ -163,6 +164,8 @@ CMakeFiles/SimpleCPXParser.dir/src/SimpleCPXParser.c.o: /home/lazarus/Documents/
 /usr/include/bits/floatn-common.h:
 
 /usr/include/bits/types/__locale_t.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stdbool.h:
 
 /usr/include/bits/types/__mbstate_t.h:
 
