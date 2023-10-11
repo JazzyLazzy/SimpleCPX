@@ -1,7 +1,0 @@
-/home/lazarus/Documents/SimpleCPX/build/CMakeFiles/SimpleCPXParser.dir
-/home/lazarus/Documents/SimpleCPX/build/CMakeFiles/edit_cache.dir
-/home/lazarus/Documents/SimpleCPX/build/CMakeFiles/rebuild_cache.dir
-/home/lazarus/Documents/SimpleCPX/build/CMakeFiles/list_install_components.dir
-/home/lazarus/Documents/SimpleCPX/build/CMakeFiles/install.dir
-/home/lazarus/Documents/SimpleCPX/build/CMakeFiles/install/local.dir
-/home/lazarus/Documents/SimpleCPX/build/CMakeFiles/install/strip.dir
