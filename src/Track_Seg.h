@@ -14,6 +14,7 @@ typedef struct {
   double distance;
   unsigned long long time;
   Elevation elevation;
+  struct Track_Seg *next;
 } Track_Seg;
 
 

@@ -2,6 +2,8 @@
 #ifndef SimpleCPXParser_H
 #define SimpleCPXParser_H
 
+#include "GPX.h"
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -11,7 +13,7 @@ extern "C" {
  *
  * @param file The path to the GPX file to be parsed.
  */
-void parse_GPX(char *file);
+GPX *parse_GPX(char *file);
 
 #ifdef __cplusplus
 }
