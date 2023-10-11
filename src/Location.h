@@ -7,6 +7,7 @@ typedef struct {
   double longitude;
   int elevation;
   unsigned long long time;
+  struct Location *next;
 } Location;
 
 #endif

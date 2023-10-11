@@ -7,6 +7,7 @@
 typedef struct{
   char *name;
   Track_Seg *track_segs;
+  struct Track *next;
 } Track;
 
 #endif
