@@ -209,3 +209,34 @@ GPX *parse_GPX(char *file){
   return gpx;
   //
 }
+
+void free_gpx(GPX *gpx){
+  Waypoint *wpt = gpx->waypoints;
+  while (wpt){
+    free(wpt->location);
+    Waypoint *wpt_to_free = wpt;
+    wpt = wpt->next;
+    free(wpt_to_free);
+  }
+  Track *trk = gpx->tracks;
+  while (trk){
+    Track_Seg *track_seg = trk->track_segs;
+    while(track_seg){
+      Location *loc = track_seg->locations;
+      while (loc){
+        Location *loc_free = loc;
+        loc = loc->next;
+        free(loc_free);
+      }
+      Track_Seg *trkseg_free = track_seg;
+      track_seg = track_seg->next;
+      free(trkseg_free);
+    }
+    free(trk->name);
+    Track *trk_free = trk;
+    trk = trk->next;
+    free(trk_free);
+  }
+  free(gpx->creator);
+  free(gpx);
+}
