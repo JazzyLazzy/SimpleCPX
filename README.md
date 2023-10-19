@@ -7,6 +7,7 @@ Go into the folder with the project (where the CMakeLists.txt is located).
 mkdir build
 cd build
 cmake ..
+make
 make install
 ```
 You should now be able to include the library with `#include <SimpleCPXParser.h>`.
