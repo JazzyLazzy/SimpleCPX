@@ -1,5 +1,6 @@
 #include <expat.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
 #include "GPX.h"
@@ -8,6 +9,7 @@
 #include "SimpleCPXParser.h"
 
 #define BUFFSIZE 8192
+
 
 bool is_wpt = false;
 char buff[BUFFSIZE];
@@ -191,16 +193,22 @@ GPX *parse_GPX(char *file){
     XML_ParserFree(parser);
     return NULL;
   }
-  fread(buff, sizeof(char), BUFFSIZE, gpxf);
-  fclose(gpxf);
+  for (;;) {
+    void *buff = XML_GetBuffer(parser, BUFFSIZE);
+    int bytes_read = fread(buff, sizeof(char), BUFFSIZE, gpxf);
+    int done = bytes_read < BUFFSIZE;
+  
 
-  if (XML_Parse(parser, buff, strlen(buff), XML_TRUE) == XML_STATUS_ERROR){
-    fprintf(stderr, "Erreur d'analyse à la ligne %lu:\n%s\n",
-    XML_GetCurrentLineNumber(parser),
-    XML_ErrorString(XML_GetErrorCode(parser)));
-    exit(1);
+    if (XML_ParseBuffer(parser, bytes_read, done) == XML_STATUS_ERROR){
+      fprintf(stderr, "Erreur d'analyse à la ligne %lu:\n%s\n",
+      XML_GetCurrentLineNumber(parser),
+      XML_ErrorString(XML_GetErrorCode(parser)));
+      exit(1);
+    }
+
+    if (done) break;
   }
-
+  fclose(gpxf);
   //printf("finish parse");
   //printf("%s", gpx->creator); 
   //free(gpx->creator);
