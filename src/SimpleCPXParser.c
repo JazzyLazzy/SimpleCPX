@@ -1,5 +1,6 @@
 #include <expat.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
 #include "GPX.h"
@@ -8,6 +9,7 @@
 #include "SimpleCPXParser.h"
 
 #define BUFFSIZE 8192
+
 
 bool is_wpt = false;
 char buff[BUFFSIZE];
@@ -100,6 +102,11 @@ void handle_trkpt(void *userData, const char *args[]){
   }
 }
 
+void handle_ele(void *userData, const char *args[]){
+  GPX *gpx = userData;
+  
+}
+
 void start_element(void *userData, const char *name, const char *args[]){
   if (d == 0) {
     initialise_gpx(userData, name, args);
@@ -139,6 +146,10 @@ void read_text(void *userData, const XML_Char *s, int len){
     char *name = malloc(sizeof (XML_Char) * (len + 1));
     strncpy(name, s, len);
     gpx->tracks->name = name;
+  }else if(is_ele && is_trkpt){
+    char *pEnd;
+    int *ele = strtol(s, &pEnd, 10);
+    gpx->tracks->track_segs->locations->elevation = ele;
   }
 }
 
@@ -191,16 +202,22 @@ GPX *parse_GPX(char *file){
     XML_ParserFree(parser);
     return NULL;
   }
-  fread(buff, sizeof(char), BUFFSIZE, gpxf);
-  fclose(gpxf);
+  for (;;) {
+    void *buff = XML_GetBuffer(parser, BUFFSIZE);
+    int bytes_read = fread(buff, sizeof(char), BUFFSIZE, gpxf);
+    int done = bytes_read < BUFFSIZE;
+  
 
-  if (XML_Parse(parser, buff, strlen(buff), XML_TRUE) == XML_STATUS_ERROR){
-    fprintf(stderr, "Erreur d'analyse à la ligne %lu:\n%s\n",
-    XML_GetCurrentLineNumber(parser),
-    XML_ErrorString(XML_GetErrorCode(parser)));
-    exit(1);
+    if (XML_ParseBuffer(parser, bytes_read, done) == XML_STATUS_ERROR){
+      fprintf(stderr, "Erreur d'analyse à la ligne %lu:\n%s\n",
+      XML_GetCurrentLineNumber(parser),
+      XML_ErrorString(XML_GetErrorCode(parser)));
+      exit(1);
+    }
+
+    if (done) break;
   }
-
+  fclose(gpxf);
   //printf("finish parse");
   //printf("%s", gpx->creator); 
   //free(gpx->creator);
@@ -211,6 +228,7 @@ GPX *parse_GPX(char *file){
 }
 
 void free_gpx(GPX *gpx){
+  printf("free bird");
   Waypoint *wpt = gpx->waypoints;
   while (wpt){
     free(wpt->location);
