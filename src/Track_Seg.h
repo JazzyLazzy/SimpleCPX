@@ -4,18 +4,30 @@
 #ifndef Track_Seg_H
 #define Track_Seg_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef struct {
   int elevation_gain;
   int elevation_loss;
 } Elevation;
 
-typedef struct {
-  Location *locations;
-  double distance;
-  unsigned long long time;
-  Elevation elevation;
-  struct Track_Seg *next;
-} Track_Seg;
+typedef struct Track_Seg Track_Seg;
+
+struct Track_Seg {
+    Location *locations;
+    double distance;
+    unsigned long long time;
+    Elevation elevation;
+    Location *max_elevation;
+    Location *min_elevation;
+    Track_Seg *next;
+};
+
+#ifdef __cplusplus
+}
+#endif
 
 
 #endif // !Track_Seg_H

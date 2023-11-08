@@ -1,8 +1,9 @@
-#include <expat.h>
+#include "expat.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
+#include <android/log.h>
 #include "GPX.h"
 #include "Waypoint.h"
 #include "Location.h"
@@ -37,7 +38,7 @@ void initialise_gpx(void *userData, const char *name, const char *args[]){
     }else if(strncmp(args[i], "version\0", 8) == 0){
       strncpy(gpx->version, args[i+1], 4);
     }
-  } 
+  }
 }
 
 void set_location(Location *location, const char *args[]){
@@ -56,11 +57,14 @@ void handle_waypoint(void *userData, const char *args[]){
   if (gpx->waypoints == NULL){
     wpt->next = NULL;
     gpx->waypoints = wpt;
+    gpx->size = 1;
   }else{
     wpt->next = gpx->waypoints;
     gpx->waypoints = wpt;
+    gpx->size++;
   }
   Location *location = malloc(sizeof (Location));
+  location->next = NULL;
   wpt->location = location;
   set_location(location, args);
 }
@@ -68,6 +72,8 @@ void handle_waypoint(void *userData, const char *args[]){
 void handle_trk(void *userData){
   GPX *gpx = userData;
   Track *trk = malloc(sizeof (Track));
+  trk->next = NULL;
+  trk->track_segs = NULL;
   if (gpx->tracks == NULL){
     trk->next = NULL;
     gpx->tracks = trk;
@@ -80,6 +86,8 @@ void handle_trk(void *userData){
 void handle_trkseg(void *userData){
   GPX *gpx = userData;
   Track_Seg *trkseg = malloc(sizeof (Track_Seg));
+  trkseg->next = NULL;
+  trkseg->locations = NULL;
   if (gpx->tracks->track_segs == NULL){
     trkseg->next = NULL;
     gpx->tracks->track_segs = trkseg;
@@ -92,6 +100,7 @@ void handle_trkseg(void *userData){
 void handle_trkpt(void *userData, const char *args[]){
   GPX *gpx = userData;
   Location *location = malloc(sizeof (Location));
+  location->next = NULL;
   set_location(location, args);
   if (gpx->tracks->track_segs->locations == NULL){
     location->next = NULL;
@@ -147,8 +156,7 @@ void read_text(void *userData, const XML_Char *s, int len){
     strncpy(name, s, len);
     gpx->tracks->name = name;
   }else if(is_ele && is_trkpt){
-    char *pEnd;
-    int *ele = strtol(s, &pEnd, 10);
+    double ele = atof(s);
     gpx->tracks->track_segs->locations->elevation = ele;
   }
 }
@@ -190,8 +198,13 @@ GPX *parse_GPX(char *file){
   XML_SetCharacterDataHandler(parser, read_text);
  
   GPX *gpx = malloc(sizeof (GPX));
-  if (gpx == NULL)
-    return NULL;
+  if (gpx == NULL){
+      return NULL;
+  } else {
+      gpx->waypoints = NULL;
+      gpx->tracks = NULL;
+      gpx->size = 0;
+  }
 
   XML_SetUserData(parser, gpx);
 
@@ -230,11 +243,11 @@ GPX *parse_GPX(char *file){
 void free_gpx(GPX *gpx){
   printf("free bird");
   Waypoint *wpt = gpx->waypoints;
-  while (wpt){
-    free(wpt->location);
-    Waypoint *wpt_to_free = wpt;
-    wpt = wpt->next;
-    free(wpt_to_free);
+  while (wpt != NULL){
+      //Waypoint *wpt_to_free = wpt;
+      wpt = wpt->next;
+      //free(wpt_to_free->location);
+      //free(wpt_to_free);
   }
   Track *trk = gpx->tracks;
   while (trk){
