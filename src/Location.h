@@ -11,7 +11,7 @@ typedef struct Location Location;
 struct Location {
   double latitude;
   double longitude;
-  int elevation;
+  double elevation;
   unsigned long long time;
   Location *next;
 };

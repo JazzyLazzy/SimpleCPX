@@ -26,10 +26,9 @@ int main(int argc, char **argv){
         location = location->next;
       }
       trkseg = trkseg->next;
-    }
+  }
     trk = trk->next;
   }
-  free(gpx->creator);
-  free(gpx);
+  free_gpx(gpx);
   return 0;
 }

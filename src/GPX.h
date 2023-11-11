@@ -14,6 +14,7 @@ typedef struct {
   char version[4];
   Waypoint *waypoints;
   Track *tracks;
+  size_t size;
 } GPX;
 
 #ifdef __cplusplus
